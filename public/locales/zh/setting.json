@@ -209,7 +209,7 @@
     "no_api_key": "暂未创建 API Key",
     "bot_tip_title": "使用机器人向频道里发送消息",
     "bot_tip_desc": "注意：机器人的 API Key 只在生成那一刻展示，如果忘记，请生成一个新的 Key。",
-    "webhook_tip_title": "Webhook 是一个用以接收 VoceChat 推送数据的 URL 地址",
+    "webhook_tip_title": "Webhook 是一个用以接收 CocoChat 推送数据的 URL 地址",
     "webhook_tip_desc": "请提供一个有效的 Webhook URL：GET 请求响应 200 即为有效。我们会使用 POST 推送数据。",
     "manage": "管理",
     "how_to_use": "使用文档",
@@ -217,7 +217,7 @@
     "create_title": "创建机器人",
     "create_desc": "给你的机器人一个名字，同时也可以设置 Webhook URL，用以接收推送的数据。",
     "create_key_title": "创建机器人 API Key",
-    "create_key_desc": "使用 API Key 授权机器人与 VoceChat 数据流通",
+    "create_key_desc": "使用 API Key 授权机器人与 CocoChat 数据流通",
     "create_key_warning": "关闭该弹窗后，密钥将不再可见，请确保复制保存！",
     "key_copy_and_close": "复制并关闭",
     "delete_title": "删除机器人",
@@ -250,7 +250,7 @@
     "clear_desc": "该频道内消息将在客户端和服务端彻底删除"
   },
   "smtp": {
-    "desc": "对于新消息电子邮件通知（高级功能，升级到 <0>VoceChat Pro</0>）和新注册电子邮件验证，我们使用 SMTP。",
+    "desc": "对于新消息电子邮件通知（高级功能，升级到 <0>CocoChat Pro</0>）和新注册电子邮件验证，我们使用 SMTP。",
     "sub_desc": "请在下方设置您的 SMTP。",
     "enable": "开启",
     "host": "主机",
@@ -320,7 +320,7 @@
     "enter_name": "请输入通行密钥名称"
   },
   "widget": {
-    "tip": "将挂件 SDK 内嵌到网页，实现 VoceChat 扩展！",
+    "tip": "将挂件 SDK 内嵌到网页，实现 CocoChat 扩展！",
     "code": "代码举例",
     "code_comment": "将以下代码放置于你的网页中",
     "config": "配置说明",

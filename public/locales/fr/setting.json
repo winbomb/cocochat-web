@@ -241,7 +241,7 @@
     "more_details": "Besoin de plus de détails ? Consultez notre <0>documentation</0>."
   },
   "widget": {
-    "tip": "Étendre VoceChat en intégrant le widget SDK VoceChat !",
+    "tip": "Étendre CocoChat en intégrant le widget SDK CocoChat !",
     "code": "Exemple de Code",
     "code_comment": "mettez ce fragment de code dans votre fichier html",
     "config": "Description de la Configuration",
@@ -254,7 +254,7 @@
     "param_title": "titre de la fenêtre de chat popup",
     "param_logo": "URL de l'icône du logo de la fenêtre de chat popup",
     "param_auto_reg": "true : Enregistrer automatiquement un nouvel utilisateur s'il n'existe pas, false : l'utilisateur doit saisir son email et son nom pour s'inscrire",
-    "param_login_token": "Si vous utilisez les informations existantes d'utilisateur de votre propre plateforme pour générer un nouveau compte VoceChat, ceci est le token de connexion généré par votre plateforme, pour plus de détails, veuillez vous référer à : https://doc.voce.chat/zh-cn/login-with-other-account. Ne remplissez pas ceci pour des scénarios par défaut (aucun système d'utilisateurs tiers) !",
+    "param_login_token": "Si vous utilisez les informations existantes d'utilisateur de votre propre plateforme pour générer un nouveau compte CocoChat, ceci est le token de connexion généré par votre plateforme, pour plus de détails, veuillez vous référer à : https://doc.voce.chat/zh-cn/login-with-other-account. Ne remplissez pas ceci pour des scénarios par défaut (aucun système d'utilisateurs tiers) !",
     "param_theme_color": "La couleur de thème du widget",
     "param_close_width": "La largeur lorsque le widget est fermé",
     "param_close_height": "La hauteur lorsque le widget est fermé",

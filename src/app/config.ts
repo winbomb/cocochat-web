@@ -12,7 +12,7 @@ const prices: Price[] = [
   },
 ];
 const official_dev = `https://dev.voce.chat`;
-const local_dev = `http://localhost:3000`;
+const local_dev = `https://chat.zimu.pub`;
 // const local_dev = `https://dev.voce.chat`;
 const dev_origin = process.env.REACT_APP_OFFICIAL_DEMO ? official_dev : local_dev;
 
@@ -53,13 +53,13 @@ export const getLicensePriceList = () => {
         {
           type: "payment",
           price: "1",
-          title: "Test VoceChat Enterprise",
+          title: "Test CocoChat Enterprise",
           limit: 99999,
           pid: "price_1LkQGpGGoUDRyc3jGTh3GYHw",
           desc: "test price",
         },
         {
-          title: "VoceChat Pro",
+          title: "CocoChat Pro",
           price: "1",
           limit: 100,
           pid: "price_1MMNNCGGoUDRyc3jSIGIsb3C",
@@ -103,18 +103,18 @@ export const FILE_SLICE_SIZE = 1000 * 1000; //
 export const FILE_IMAGE_SIZE = 1000 * 10000 * 8; //10mb
 export const KEY_SET_EMAIL_MSG_TIP = "SET_EMAIL_MSG_TIP";
 export const KEY_MOBILE_APP_TIP = "MOBILE_APP_TIP";
-export const KEY_LOGIN_USER = "VOCECHAT_LOGIN_USER";
-export const KEY_TOKEN = "VOCECHAT_TOKEN";
-export const KEY_EXPIRE = "VOCECHAT_TOKEN_EXPIRE";
-export const KEY_REFRESH_TOKEN = "VOCECHAT_REFRESH_TOKEN";
-export const KEY_UID = "VOCECHAT_CURR_UID";
-export const KEY_DEVICE_ID = "VOCECHAT_DEVICE_KEY";
-export const KEY_DEVICE_TOKEN = "VOCECHAT_DEVICE_TOKEN";
-export const KEY_USERS_VERSION = "VOCECHAT_USERS_VERSION";
-export const KEY_AFTER_MID = "VOCECHAT_AFTER_MID";
-export const KEY_PWA_INSTALLED = "VOCECHAT_PWA_INSTALLED";
-export const KEY_LOCAL_MAGIC_TOKEN = "VOCECHAT_LOCAL_MAGIC_TOKEN";
-export const KEY_LOCAL_TRY_PATH = "VOCECHAT_TRY_PATH";
+export const KEY_LOGIN_USER = "CocoChat_LOGIN_USER";
+export const KEY_TOKEN = "CocoChat_TOKEN";
+export const KEY_EXPIRE = "CocoChat_TOKEN_EXPIRE";
+export const KEY_REFRESH_TOKEN = "CocoChat_REFRESH_TOKEN";
+export const KEY_UID = "CocoChat_CURR_UID";
+export const KEY_DEVICE_ID = "CocoChat_DEVICE_KEY";
+export const KEY_DEVICE_TOKEN = "CocoChat_DEVICE_TOKEN";
+export const KEY_USERS_VERSION = "CocoChat_USERS_VERSION";
+export const KEY_AFTER_MID = "CocoChat_AFTER_MID";
+export const KEY_PWA_INSTALLED = "CocoChat_PWA_INSTALLED";
+export const KEY_LOCAL_MAGIC_TOKEN = "CocoChat_LOCAL_MAGIC_TOKEN";
+export const KEY_LOCAL_TRY_PATH = "CocoChat_TRY_PATH";
 export const Emojis = ["👍", "❤️", "😄", "👀", "👎", "🎉", "🙁", "🚀"];
 export const getInviteLinkExpireList = () => [
   {

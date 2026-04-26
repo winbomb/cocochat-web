@@ -73,7 +73,7 @@
   "mobile_app": "欢迎下载使用<0>手机 APP</0>",
   "price": {
     "pro": {
-      "title": "VoceChat 专业版",
+      "title": "CocoChat 专业版",
       "desc": "",
       "price": "$49"
     },
@@ -84,7 +84,7 @@
     }
   },
   "inactive": {
-    "title": "VoceChat 只允许活跃一个标签页",
+    "title": "CocoChat 只允许活跃一个标签页",
     "desc": "刷新页面继续或者关闭该页面"
   }
 }

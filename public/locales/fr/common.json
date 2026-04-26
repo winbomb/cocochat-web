@@ -68,7 +68,7 @@
   "mobile_app": "Découvrez notre <0>Application Mobile</0>",
   "price": {
     "pro": {
-      "title": "VoceChat Pro",
+      "title": "CocoChat Pro",
       "desc": "",
       "price": "$49"
     },
@@ -79,7 +79,7 @@
     }
   },
   "inactive": {
-    "title": "Un seul onglet actif est autorisé pour VoceChat",
+    "title": "Un seul onglet actif est autorisé pour CocoChat",
     "desc": "Veuillez recharger cette page pour continuer à utiliser cet onglet ou le fermer"
   }
 }

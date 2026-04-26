@@ -124,7 +124,7 @@
     "more_details": "<0>ドキュメント</0> を参照してください。"
   },
   "widget": {
-    "tip": "ストラップ SDK を web ページに埋め込み、VoceChat 拡張を実現できます！",
+    "tip": "ストラップ SDK を web ページに埋め込み、CocoChat 拡張を実現できます！",
     "code": "コード",
     "code_comment": "コードをコピーして、web ページに貼り付けてください。",
     "config": "説明",
@@ -146,7 +146,7 @@
     "build_time": "ビルド時間"
   },
   "api_doc": {
-    "desc": "VoceChat API ドキュメントを参照しで、VoceChat をカスタマイズできます。",
+    "desc": "CocoChat API ドキュメントを参照しで、CocoChat をカスタマイズできます。",
     "swagger": "注意：サーバー設定 config/config.toml の network -> enable_swagger で Swagger の有効/無効を切り替えられます。swagger = false で Swagger を無効にします。",
     "access": "アクセス：",
     "use_method": "使用方法：",

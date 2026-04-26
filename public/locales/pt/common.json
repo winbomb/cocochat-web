@@ -68,7 +68,7 @@
   "mobile_app": "Check out our <0>Mobile APP</0>",
   "price": {
     "pro": {
-      "title": "VoceChat Pro",
+      "title": "CocoChat Pro",
       "desc": "",
       "price": "$49"
     },
@@ -79,7 +79,7 @@
     }
   },
   "inactive": {
-    "title": "Only one active tab is allowed for VoceChat",
+    "title": "Only one active tab is allowed for CocoChat",
     "desc": "Please reload this page to continue using this tab or close it"
   }
 }

@@ -10,7 +10,7 @@ type ChannelData = {
 const useTabBroadcast = () => {
   const [tabActive, setTabActive] = useState(true);
   useEffect(() => {
-    const channel = new BroadcastChannel("VOCECHAT_CHANNEL");
+    const channel = new BroadcastChannel("CocoChat_CHANNEL");
     channel.postMessage({ type: "NEW_TAB", message: "new tab opened" } as ChannelData);
     const handler = (data: ChannelData) => {
       console.log("channel data", data);
@@ -26,7 +26,7 @@ const useTabBroadcast = () => {
   }, []);
 
   return {
-    tabActive
+    tabActive,
   };
 };
 

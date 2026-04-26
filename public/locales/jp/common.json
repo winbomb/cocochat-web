@@ -63,7 +63,7 @@
   "mobile_app": "<0>モバイルアプリ</0>をご覧ください",
   "price": {
     "pro": {
-      "title": "VoceChat Pro",
+      "title": "CocoChat Pro",
       "desc": "",
       "price": "$49"
     },
@@ -74,7 +74,7 @@
     }
   },
   "inactive": {
-    "title": "アクティブなタブは1つだけですVoceChat",
+    "title": "アクティブなタブは1つだけですCocoChat",
     "desc": "このタブを引き続き使用するには、このページを再読み込みするか、タブを閉じてください。"
   }
 }

@@ -1,16 +1,16 @@
-import { VoceChatFile } from "@/types/resource";
+import { CocoChatFile } from "@/types/resource";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-const initialState: VoceChatFile[] = [];
+const initialState: CocoChatFile[] = [];
 
 const filesSlice = createSlice({
   name: `files`,
   initialState,
   reducers: {
-    fillFiles(state, action: PayloadAction<VoceChatFile[]>) {
+    fillFiles(state, action: PayloadAction<CocoChatFile[]>) {
       return action.payload;
     },
-    addFile(state, action: PayloadAction<VoceChatFile>) {
+    addFile(state, action: PayloadAction<CocoChatFile>) {
       state.push(action.payload);
     },
     deleteFile(state, action: PayloadAction<string>) {
@@ -19,8 +19,8 @@ const filesSlice = createSlice({
       if (idx > -1) {
         state.splice(idx, 1);
       }
-    }
-  }
+    },
+  },
 });
 
 export const { addFile, deleteFile, fillFiles } = filesSlice.actions;

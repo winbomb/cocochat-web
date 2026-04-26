@@ -55,7 +55,7 @@ const InviteInMobile = () => {
         )}
         <div className="text-gray-600 w-[80%] flex flex-col items-center gap-2 my-4">
           <i className="text-gray-400 not-italic text-xs break-words text-center">
-            👇App not showing? You may copy the following invitation link and paste it into VoceChat
+            👇App not showing? You may copy the following invitation link and paste it into CocoChat
             App.
           </i>
           <div

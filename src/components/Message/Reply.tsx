@@ -104,10 +104,10 @@ const Reply: FC<ReplyProps> = ({ mid, interactive = true, context, to = 0 }) => 
       }, 3000);
     } else {
       // 消息不在DOM中，触发自定义事件让虚拟列表滚动
-      const feedId = `VOCECHAT_FEED_${context}_${to}`;
+      const feedId = `CocoChat_FEED_${context}_${to}`;
       const feedEle = document.getElementById(feedId);
       if (feedEle) {
-        feedEle.dispatchEvent(new CustomEvent('scrollToMessage', { detail: { mid: Number(mid) } }));
+        feedEle.dispatchEvent(new CustomEvent("scrollToMessage", { detail: { mid: Number(mid) } }));
       }
     }
   };

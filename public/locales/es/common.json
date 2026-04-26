@@ -68,7 +68,7 @@
   "mobile_app": "Echa un vistazo a nuestra <0>Aplicación Móvil</0>",
   "price": {
     "pro": {
-      "title": "VoceChat Pro",
+      "title": "CocoChat Pro",
       "desc": "",
       "price": "$49"
     },
@@ -79,7 +79,7 @@
     }
   },
   "inactive": {
-    "title": "Solo se permite una pestaña activa para VoceChat",
+    "title": "Solo se permite una pestaña activa para CocoChat",
     "desc": "Por favor, recarga esta página para continuar usando esta pestaña o ciérrala"
   }
 }

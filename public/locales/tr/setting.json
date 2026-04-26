@@ -190,7 +190,7 @@
     "more_details": "Daha fazla detay için lütfen <0>dökümantasyon'a</0> bakın."
   },
   "widget": {
-    "tip": "Vocechat Widget SDK'sını yerleştirerek VoceChat'i genişletin!",
+    "tip": "CocoChat Widget SDK'sını yerleştirerek CocoChat'i genişletin!",
     "code": "Kod örneği",
     "code_comment": "bu kod parçacığını html dosyanıza koyun",
     "config": "Yapılandırma Açıklaması",

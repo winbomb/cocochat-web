@@ -54,7 +54,7 @@ export const channelSchemas: ChannelSchema[] = [
         name: "username",
         type: "text",
         label: "Username",
-        placeholder: "VoceChat Bot",
+        placeholder: "CocoChat Bot",
         required: false,
         description: "Override webhook username",
       },

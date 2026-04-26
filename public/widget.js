@@ -13,11 +13,11 @@
     title = "",
     logo = "",
     position = "right",
-    welcome = ""
+    welcome = "",
   } = d.currentScript.dataset;
   const _src = d.currentScript.src;
   const wrapper = d.createElement("iframe");
-  wrapper.id = "VOCECHAT_WIDGET";
+  wrapper.id = "CocoChat_WIDGET";
   const styles = {
     position: "fixed",
     borderRadius: "8px",
@@ -26,13 +26,13 @@
     bottom: "16px",
     border: "none",
     zIndex: 9999,
-    boxShadow: `rgb(0 0 0 / 25%) 0px 25px 50px -12px`
+    boxShadow: `rgb(0 0 0 / 25%) 0px 25px 50px -12px`,
   };
   Object.assign(wrapper.style, styles);
   wrapper.src = `${
     new URL(_src).origin
   }/widget.html?id=${id}&host=${hostId}&autoReg=${autoReg}&token=${loginToken}&themeColor=${encodeURIComponent(
-    themeColor
+    themeColor,
   )}&from=${encodeURIComponent(location.hostname)}&welcome=${encodeURIComponent(welcome)}&title=${encodeURIComponent(title)}&logo=${encodeURIComponent(logo)}`;
   wrapper.width = closeWidth;
   wrapper.height = closeHeight;
@@ -65,7 +65,7 @@
           break;
       }
     },
-    false
+    false,
   );
   d.body.appendChild(wrapper);
 })(window, document);

@@ -40,7 +40,7 @@
       "Für Unternehmensanpassungen oder bei Fragen wenden Sie sich bitte an han@privoce.com oder fügen Sie uns auf WeChat hinzu: Privoce"
     ],
     "sub_desc": "Jedes VoceSpace-Konto bietet unbegrenzte Gesprächsminuten, 5 gleichzeitige Teilnehmer und eine kostenlose 4K-Auflösung. Es ist keine Kontoerstellung erforderlich. Befolgen Sie die unten stehenden Anweisungen, um Ihren VoceSpace korrekt zu konfigurieren.",
-    "domain_desc": "Diese Domain benötigt einen DNS-A-Eintrag, der auf die IP-Adresse des aktuellen Servers verweist, auf dem Sie VoceChat hosten.",
+    "domain_desc": "Diese Domain benötigt einen DNS-A-Eintrag, der auf die IP-Adresse des aktuellen Servers verweist, auf dem Sie CocoChat hosten.",
     "enable": "Aktivieren",
     "how_to": "Nach der Aktivierung legen Sie bitte eine benutzerdefinierte Domain fest. Klicken Sie auf „Speichern“, und das System aktiviert VoceSpace automatisch.",
     "old": "Ihre aktuelle Serverversion ist veraltet. "
@@ -288,7 +288,7 @@
     "more_details": "Details? Siehe <0>Dokumentation</0>."
   },
   "widget": {
-    "tip": "Erweitere VoceChat mit dem Widget-SDK!",
+    "tip": "Erweitere CocoChat mit dem Widget-SDK!",
     "code": "Codebeispiel",
     "code_comment": "Diesen Code in deine HTML-Datei einfügen",
     "config": "Konfigurationsbeschreibung",

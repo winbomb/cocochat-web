@@ -2,22 +2,14 @@ import { createApi } from "@reduxjs/toolkit/query/react";
 
 import { Channel } from "@/types/channel";
 import { ContentTypeKey } from "@/types/message";
-import {
-  CreateAdminDTO,
-  LoginConfig,
-  Server,
-  SystemCommon,
-} from "@/types/server";
+import { CreateAdminDTO, LoginConfig, Server, SystemCommon } from "@/types/server";
 import { User } from "@/types/user";
 import { compareVersion, encodeBase64 } from "@/utils";
-import BASE_URL, {
-  ContentTypes,
-  KEY_SERVER_VERSION,
-} from "../config";
+import BASE_URL, { ContentTypes, KEY_SERVER_VERSION } from "../config";
 import { updateInfo } from "../slices/server";
 import { RootState } from "../store";
 import baseQuery from "./base.query";
-import { GetFilesDTO, VoceChatFile } from "@/types/resource";
+import { GetFilesDTO, CocoChatFile } from "@/types/resource";
 import { GroupAnnouncement } from "@/types/sse";
 
 export const serverApi = createApi({
@@ -109,7 +101,7 @@ export const serverApi = createApi({
         }
       },
     }),
-    getFiles: builder.query<VoceChatFile[], GetFilesDTO>({
+    getFiles: builder.query<CocoChatFile[], GetFilesDTO>({
       query: (params) => ({
         url: `/admin/system/files?${new URLSearchParams(
           params as Record<string, string>,

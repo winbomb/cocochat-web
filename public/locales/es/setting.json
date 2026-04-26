@@ -235,7 +235,7 @@
     "more_details": "¿Necesitas más detalles? Consulta nuestra <0>documentación</0>."
   },
   "widget": {
-    "tip": "¡Extiende VoceChat integrando el SDK del widget de VoceChat!",
+    "tip": "¡Extiende CocoChat integrando el SDK del widget de CocoChat!",
     "code": "Ejemplo de Código",
     "code_comment": "inserta este fragmento de código en tu archivo HTML",
     "config": "Descripción de Configuración",
@@ -248,7 +248,7 @@
     "param_title": "chat popup title",
     "param_logo": "chat popup logo icon URL",
     "param_auto_reg": "true: Registro automático de un nuevo usuario si no existe, false: el visitante debe ingresar correo electrónico y nombre para registrarse",
-    "param_login_token": "Si estás utilizando la información de usuario existente de tu propia plataforma para generar una nueva cuenta de VoceChat, este es el token de inicio de sesión generado por tu plataforma. Para más detalles, consulta: https://doc.voce.chat/zh-cn/login-with-other-account. ¡No lo llenes para escenarios predeterminados (sin sistema de usuario de terceros)!",
+    "param_login_token": "Si estás utilizando la información de usuario existente de tu propia plataforma para generar una nueva cuenta de CocoChat, este es el token de inicio de sesión generado por tu plataforma. Para más detalles, consulta: https://doc.voce.chat/zh-cn/login-with-other-account. ¡No lo llenes para escenarios predeterminados (sin sistema de usuario de terceros)!",
     "param_theme_color": "El color del tema del widget",
     "param_close_width": "El ancho cuando el widget está cerrado",
     "param_close_height": "La altura cuando el widget está cerrado",

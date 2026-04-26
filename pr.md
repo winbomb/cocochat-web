@@ -1,4 +1,4 @@
-Feature Requests for VoceChat:
+Feature Requests for CocoChat:
 
 1. Ability to Create Sub-Threads in Channels
    Allow users to create sub-threads within channels to improve channel organization and make discussions easier to follow.

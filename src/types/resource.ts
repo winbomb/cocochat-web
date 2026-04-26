@@ -63,7 +63,7 @@ export interface OG {
   locale_alternate?: [];
   site_name?: string;
 }
-export interface VoceChatFile {
+export interface CocoChatFile {
   mid: number;
   from_uid: number;
   gid: number;
