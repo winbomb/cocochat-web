@@ -13,7 +13,6 @@ import DeleteModal from "./DeleteModal";
 import NameEdit from "./NameEdit";
 import WebhookEdit from "./WebhookEdit";
 import WebhookModal from "./WebhookModal";
-import { shallowEqual } from "react-redux";
 import { ConfigTip } from "@/components/ConfigTip";
 
 const tdClass =
@@ -27,8 +26,7 @@ export default function BotConfig() {
   const [currWebhookParams, setCurrWebhookParams] = useState<WebhookParams | undefined>(undefined);
   const [currDeleteParams, setCurrDeleteParams] = useState<DeleteParams | undefined>(undefined);
   const bots = useAppSelector(
-    (store) => Object.values(store.users.byId).filter((u) => !!u.is_bot),
-    shallowEqual
+    (store) => Object.values(store.users.byId).filter((u) => !!u.is_bot)
   );
   const { t } = useTranslation("setting", { keyPrefix: "bot" });
   const { t: ct } = useTranslation();

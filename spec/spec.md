@@ -2,6 +2,16 @@
 
 
 
+## 3. 优化机器人创建的逻辑
+
+1、机器人创建增加password（用于matrix协议连接）
+
+2、apikey创建不需要password，当matrix客户端通过用户名、密码登录时，自动创建一个apikey并返回给客户端。
+
+
+
+
+
 ## 2. 调整创建api_key页面
 
 调整“创建机器人 API Key”页面：

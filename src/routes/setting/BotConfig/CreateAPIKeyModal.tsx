@@ -30,14 +30,10 @@ const CreateAPIKeyModal = ({ closeModal, uid }: Props) => {
     }
     const inputs = formEle.querySelectorAll("input");
     const nameInput = inputs[0];
-    const passwordInput = inputs[1];
-    const payload: { uid: number; name: string; password?: string } = {
+    const payload: { uid: number; name: string } = {
       uid,
       name: nameInput?.value || ""
     };
-    if (passwordInput?.value) {
-      payload.password = passwordInput.value;
-    }
     createBotAPIKey(payload);
   };
   useEffect(() => {
@@ -93,12 +89,6 @@ const CreateAPIKeyModal = ({ closeModal, uid }: Props) => {
                 Name
               </label>
               <Input name={"name"} required placeholder="Please input API Key name" autoComplete="new-password" data-form-type="other"></Input>
-            </div>
-            <div className="flex gap-2 w-full">
-              <label htmlFor={"password"} className="text-sm text-gray-500 flex items-center whitespace-nowrap w-[80px]">
-                Password
-              </label>
-              <Input name={"password"} type="password" placeholder="Please input password (optional)" autoComplete="new-password" data-form-type="other"></Input>
             </div>
           </form>
         )}

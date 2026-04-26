@@ -2,18 +2,21 @@ import { ChangeEvent, useEffect, useState } from "react";
 import { toast } from "react-hot-toast";
 import { useTranslation } from "react-i18next";
 
-import { BASE_ORIGIN } from "../../../app/config";
-import { useCreateUserMutation } from "../../../app/services/user";
+import { useUpdateUserMutation } from "../../../app/services/user";
+import { useAppSelector } from "../../../app/store";
 import Modal from "../../../components/Modal";
 import Button from "../../../components/styled/Button";
 import Input from "../../../components/styled/Input";
 import StyledModal from "../../../components/styled/Modal";
 
 type Props = {
+  uid: number;
   closeModal: () => void;
 };
-const CreateModal = ({ closeModal }: Props) => {
-  const [createUser, { isSuccess, isLoading, error }] = useCreateUserMutation();
+
+const EditModal = ({ uid, closeModal }: Props) => {
+  const [updateUser, { isSuccess, isLoading, error }] = useUpdateUserMutation();
+  const user = useAppSelector((store) => store.users.byId[uid]);
   const { t } = useTranslation("setting", { keyPrefix: "bot" });
   const [inputs, setInputs] = useState({
     name: "",
@@ -21,29 +24,39 @@ const CreateModal = ({ closeModal }: Props) => {
     password: ""
   });
   const { t: ct } = useTranslation();
-  // const [input, setInput] = useState("");
+
+  useEffect(() => {
+    if (user) {
+      setInputs({
+        name: user.name || "",
+        webhook_url: user.webhook_url || "",
+        password: ""
+      });
+    }
+  }, [user]);
+
   const handleInputChange = (evt: ChangeEvent<HTMLInputElement>) => {
     const { value } = evt.target;
     const { name = "" } = evt.target.dataset;
-
     setInputs((prev) => ({ ...prev, [name]: value }));
   };
-  const handleCreateBot = () => {
+
+  const handleUpdateBot = () => {
     if (inputs.name.trim() === "") {
       return;
     }
     const { name, webhook_url, password } = inputs;
-    const hostname = new URL(BASE_ORIGIN).hostname;
-    createUser({
-      is_bot: true,
-      is_admin: false,
-      gender: 1,
-      email: `bot_${new Date().getTime()}@${hostname}`,
-      password,
+    const payload: { id: number; name: string; webhook_url?: string; password?: string } = {
+      id: uid,
       name,
       webhook_url: webhook_url.trim() === "" ? undefined : webhook_url
-    });
+    };
+    if (password.trim() !== "") {
+      payload.password = password;
+    }
+    updateUser(payload);
   };
+
   useEffect(() => {
     if (error) {
       switch (error.status) {
@@ -54,39 +67,38 @@ const CreateModal = ({ closeModal }: Props) => {
           toast.error("Name conflict with existed username, try the proposed name below.");
           setInputs((prev) => ({ ...prev, name: `${prev.name}-bot` }));
           break;
-
         default:
           break;
       }
     }
   }, [error]);
+
   useEffect(() => {
     if (isSuccess) {
-      toast.success("Create Bot Successfully!");
+      toast.success("Update Bot Successfully!");
       closeModal();
     }
-  }, [isSuccess]);
+  }, [isSuccess, closeModal]);
+
   const { name, webhook_url, password } = inputs;
+
   return (
     <Modal id="modal-modal">
       <StyledModal
-        title={t("create_title")}
-        description={t("create_desc")}
+        title={t("edit_title")}
+        description={t("edit_desc")}
         buttons={
           <>
             <Button className="cancel" onClick={closeModal}>
               {ct("action.cancel")}
             </Button>
-            <Button disabled={!inputs.name} onClick={handleCreateBot}>
-              {isLoading ? "Creating" : ct("action.done")}
+            <Button disabled={!inputs.name || isLoading} onClick={handleUpdateBot}>
+              {isLoading ? "Updating" : ct("action.done")}
             </Button>
           </>
         }
       >
         <div className="w-full flex flex-col gap-2">
-          {/* Hidden inputs to prevent browser autofill */}
-          <input type="text" name="prevent_autofill_username" style={{ display: 'none' }} tabIndex={-1} autoComplete="off" />
-          <input type="password" name="prevent_autofill_password" style={{ display: 'none' }} tabIndex={-1} autoComplete="off" />
           <div className="flex flex-col items-start gap-1 w-full">
             <label htmlFor={"name"} className="text-sm text-gray-500">
               Name
@@ -96,7 +108,7 @@ const CreateModal = ({ closeModal }: Props) => {
               value={name}
               data-name={"name"}
               placeholder="Please input bot name"
-              autoComplete="off"
+              autoComplete="new-password"
               data-form-type="other"
             ></Input>
           </div>
@@ -109,8 +121,8 @@ const CreateModal = ({ closeModal }: Props) => {
               value={password}
               data-name={"password"}
               type="password"
-              placeholder="Please input password"
-              autoComplete="new-password"
+              placeholder="Leave empty to keep current password"
+              autoComplete="off"
               data-form-type="other"
             ></Input>
           </div>
@@ -132,4 +144,4 @@ const CreateModal = ({ closeModal }: Props) => {
   );
 };
 
-export default CreateModal;
+export default EditModal;

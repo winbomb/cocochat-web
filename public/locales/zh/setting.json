@@ -216,6 +216,8 @@
     "manage_desc": "机器人一旦删除，所有与其相关的接口也立即失效，包括 Webhook。",
     "create_title": "创建机器人",
     "create_desc": "给你的机器人一个名字，同时也可以设置 Webhook URL，用以接收推送的数据。",
+    "edit_title": "编辑机器人",
+    "edit_desc": "修改机器人的名称、密码和 Webhook URL。",
     "create_key_title": "创建机器人 API Key",
     "create_key_desc": "使用 API Key 授权机器人与 CocoChat 数据流通",
     "create_key_warning": "关闭该弹窗后，密钥将不再可见，请确保复制保存！",

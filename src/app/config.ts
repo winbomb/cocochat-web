@@ -12,8 +12,8 @@ const prices: Price[] = [
   },
 ];
 const official_dev = `https://dev.voce.chat`;
-const local_dev = `https://chat.zimu.pub`;
-// const local_dev = `https://dev.voce.chat`;
+// const local_dev = `https://chat.zimu.pub`;
+const local_dev = `http://127.0.0.1:3000`;
 const dev_origin = process.env.REACT_APP_OFFICIAL_DEMO ? official_dev : local_dev;
 
 // const local_dev = `https://im.ttt.td`;

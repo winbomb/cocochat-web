@@ -16,7 +16,7 @@ import {
 } from "@/types/user";
 import BASE_URL, { ContentTypes } from "../config";
 import { updateAutoDeleteSetting, updateMute, updateRemarkByUid } from "../slices/footprint";
-import { fillUsers, updateContactStatus as updateStatus } from "../slices/users";
+import { fillUsers, updateContactStatus as updateStatus, updateUserField } from "../slices/users";
 import { RootState } from "../store";
 // import toast from "react-hot-toast";
 import baseQuery from "./base.query";
@@ -126,6 +126,22 @@ export const userApi = createApi({
         body: rest,
         method: "PUT",
       }),
+      async onQueryStarted({ id }, { dispatch, queryFulfilled }) {
+        try {
+          const { data: updatedUser } = await queryFulfilled;
+          dispatch(
+            updateUserField({
+              uid: id,
+              updates: {
+                name: updatedUser.name,
+                webhook_url: updatedUser.webhook_url
+              }
+            })
+          );
+        } catch {
+          console.log("update user failed");
+        }
+      },
     }),
     updateRemark: builder.mutation<void, UserRemarkDTO>({
       query: (data) => ({

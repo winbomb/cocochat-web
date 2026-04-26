@@ -112,10 +112,19 @@ const usersSlice = createSlice({
           state.byId[data.uid]!.status = data.status;
         }
       });
+    },
+    updateUserField(
+      state,
+      action: PayloadAction<{ uid: number; updates: Partial<StoredUser> }>
+    ) {
+      const { uid, updates } = action.payload;
+      if (state.byId[uid]) {
+        state.byId[uid] = { ...state.byId[uid], ...updates };
+      }
     }
   }
 });
 
-export const { updateContactStatus, resetUsers, fillUsers, updateUsersByLogs, updateUsersStatus } =
+export const { updateContactStatus, resetUsers, fillUsers, updateUsersByLogs, updateUsersStatus, updateUserField } =
   usersSlice.actions;
 export default usersSlice.reducer;

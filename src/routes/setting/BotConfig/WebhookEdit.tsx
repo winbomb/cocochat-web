@@ -6,7 +6,8 @@ import clsx from "clsx";
 import IconCancel from "@/assets/icons/close.circle.svg";
 import IconEdit from "@/assets/icons/edit.svg";
 import IconSave from "@/assets/icons/save.svg";
-import { useGetUserByAdminQuery, useUpdateUserMutation } from "../../../app/services/user";
+import { useUpdateUserMutation } from "../../../app/services/user";
+import { useAppSelector } from "../../../app/store";
 
 type Props = {
   uid: number;
@@ -16,18 +17,14 @@ const WebhookEdit = ({ uid }: Props) => {
   const formRef = useRef<HTMLFormElement>(null);
   const [editable, setEditable] = useState(false);
   const [url, setUrl] = useState("");
-  const { data, isSuccess, refetch } = useGetUserByAdminQuery(uid);
+  const user = useAppSelector((store) => store.users.byId[uid]);
   const [updateUser, { isSuccess: updateSuccess, isLoading: isUpdating }] = useUpdateUserMutation();
+
   useEffect(() => {
-    if (isSuccess && data) {
-      setUrl(data.webhook_url || "");
+    if (user) {
+      setUrl(user.webhook_url || "");
     }
-  }, [data, isSuccess]);
-  useEffect(() => {
-    if (updateSuccess) {
-      refetch();
-    }
-  }, [updateSuccess]);
+  }, [user]);
 
   const handleEdit = async () => {
     if (editable && formRef) {
@@ -63,7 +60,7 @@ const WebhookEdit = ({ uid }: Props) => {
     const form = formRef.current;
     if (form) {
       const input = form.querySelector("input");
-      input!.value = data?.webhook_url || "";
+      input!.value = user?.webhook_url || "";
     }
   };
   return (
