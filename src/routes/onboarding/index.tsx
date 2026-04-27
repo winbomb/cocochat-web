@@ -89,7 +89,7 @@ const Navigator = () => {
 };
 
 export default function OnboardingPage() {
-  const { t } = useTranslation("welcome");
+  const { t, ready } = useTranslation(["welcome", "setting"]);
   const [serverName, setServerName] = useState("");
 
   // 进入 onboarding 时清理所有旧缓存
@@ -97,9 +97,18 @@ export default function OnboardingPage() {
     clearLocalCache();
   }, []);
 
+  // 等待 i18n 初始化完成
+  if (!ready) {
+    return (
+      <div className="h-screen bg-neutral-100 dark:bg-neutral-900 flex items-center justify-center">
+        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-gray-900 dark:border-gray-100"></div>
+      </div>
+    );
+  }
+
   return (
     <>
-      <title>{t("onboarding.title") || ""}</title>
+      <title>{t("welcome:onboarding.title")}</title>
       <div className="h-screen bg-neutral-100 dark:bg-neutral-900 overflow-y-auto">
         <Wizard header={<Navigator />}>
           <WelcomePage />
