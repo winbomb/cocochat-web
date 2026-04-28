@@ -5,17 +5,10 @@ import SettingBlock from "@/components/SettingBlock";
 import StyledRadio from "@/components/styled/Radio";
 
 // type Props = {}
-export type LanguageType = "en" | "zh" | "jp" | "tr" | "pt" | "es" | "fr" | "ru" | "de";
+export type LanguageType = "en" | "zh";
 export const LangMap: Record<LanguageType, string> = {
   en: "English",
   zh: "中文",
-  tr: "Türkçe",
-  jp: "日本語",
-  pt: "Portuguese",
-  de: "Deutsch",
-  fr: "Français",
-  es: "Español",
-  ru: "Русский",
 };
 const LanguageList = ({
   context = "overview",
