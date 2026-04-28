@@ -351,7 +351,7 @@
   "version": {
     "client_version": "Client Version",
     "server_version": "Server Version",
-    "build_time": "Build Timestamp",
+    "build_time": "Build Time",
     "sync": "Sync to the latest version of web client"
   },
   "api_doc": {

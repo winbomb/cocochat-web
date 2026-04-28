@@ -350,7 +350,7 @@
   "version": {
     "client_version": "客户端版本",
     "server_version": "服务器端版本",
-    "build_time": "构建时间戳",
+    "build_time": "构建时间",
     "sync": "同步到最新版客户端"
   },
   "api_doc": {

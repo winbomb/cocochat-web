@@ -31,7 +31,7 @@ const Version: FC<Props> = () => {
         {t("server_version")}: {serverVersion}
       </li>
       <li>
-        {t("build_time")}: {ts}{" "}
+        {t("build_time")}: {dayjs(ts * 1000).format("YYYY年M月D日 HH:mm:ss")}{" "}
         <span className="text-gray-700 dark:text-gray-300">({dayjs(ts * 1000).fromNow()})</span>
       </li>
     </ul>
