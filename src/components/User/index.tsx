@@ -71,7 +71,10 @@ const User: FC<Props> = ({
   );
   const statusElement = curr.is_bot ? (
     <div className={statusContainerClass}>
-      <IconBot className={compact ? "w-[15px] h-[15px]" : "w-3 h-3"} />
+      <IconBot className={clsx(
+        compact ? "w-[15px] h-[15px]" : "w-3 h-3",
+        online ? "text-green-500" : "text-zinc-400"
+      )} />
     </div>
   ) : showStatus ? (
     <div className={statusClass}></div>
