@@ -145,7 +145,7 @@ const SearchUser: FC<Props> = ({ closeModal }) => {
                       onClick={handleChat.bind(null, inContact)}
                       className={clsx("mini", inContact && "ghost")}
                     >
-                      Add to contact
+                      {t("add_contact", { ns: "chat" })}
                     </StyledButton>
                   )}
                 </div>
