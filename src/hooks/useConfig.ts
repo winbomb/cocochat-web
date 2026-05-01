@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import { useTranslation } from "react-i18next";
-import { isEqual } from "lodash";
+import { shallowEqualObjects } from "@/utils";
 
 import {
   useGetLoginConfigQuery,
@@ -70,7 +70,7 @@ export default function useConfig(config: keyof ConfigMap = "login") {
   useEffect(() => {
     // 空对象
     if (!values || Object.keys(values).length == 0) return;
-    if (!isEqual(originalValue, values)) {
+    if (!shallowEqualObjects(originalValue, values)) {
       setChanged(true);
     } else {
       setChanged(false);

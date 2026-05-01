@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import clsx from "clsx";
 import dayjs from "dayjs";
-import WaveSurfer from "wavesurfer.js";
 
 import IconPause from "@/assets/icons/pause.svg";
 import IconPlay from "@/assets/icons/play.circle.svg";
@@ -15,20 +14,19 @@ export type VoiceMessageProps = {
   secure_url: string;
 };
 // 全局存储 Voice 信息
-const VoiceMap: { [key: string]: WaveSurfer | null } = {};
+const VoiceMap: { [key: string]: any } = {};
 const VoiceMessage = ({ file_path }: { file_path: string }) => {
   const containerRef = useRef(null);
   const [status, setStatus] = useState<"loading" | "error" | "ready">("loading");
   const [playing, setPlaying] = useState(false);
   const [duration, setDuration] = useState("");
   const initWave = async (file_path: string) => {
-    let wave: WaveSurfer | null = null;
+    const { default: WaveSurfer } = await import("wavesurfer.js");
     const audioSrc = `${BASE_URL}/resource/file?file_path=${encodeURIComponent(file_path)}`;
-    console.log("audioSrc", audioSrc);
     try {
       // 先检测资源是否存在
       await fetch(audioSrc);
-      wave = WaveSurfer.create({
+      const wave = WaveSurfer.create({
         container: containerRef.current ?? "",
         height: 32,
         waveColor: "#0BA5EC",

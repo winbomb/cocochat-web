@@ -1,6 +1,6 @@
 import { FC, useState } from "react";
 import toast from "react-hot-toast";
-import { useKey } from "rooks";
+import { useKey } from "@/hooks/useLightweightHooks";
 
 import { updateSelectMessages } from "@/app/slices/ui";
 import { useAppDispatch, useAppSelector } from "@/app/store";

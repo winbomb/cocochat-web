@@ -36,7 +36,7 @@ export default function katexPlugin(context: PluginContext): PluginInfo {
         // Match inline math: $...$
         const inlineMathRegex = /\$([^\$]+)\$/g;
         let html = literal;
-        
+
         html = html.replace(inlineMathRegex, (_match: string, math: string) => {
           try {
             return katex.renderToString(math, {
@@ -54,11 +54,11 @@ export default function katexPlugin(context: PluginContext): PluginInfo {
           content: html,
         };
       },
-      
+
       // Render block math: $$...$$
       codeBlock(node: any) {
         const { literal, info } = node;
-        
+
         // Check if it's a math code block
         if (info === 'math' || info === 'latex') {
           try {
@@ -76,7 +76,7 @@ export default function katexPlugin(context: PluginContext): PluginInfo {
             return null;
           }
         }
-        
+
         return null;
       },
     },
@@ -102,7 +102,7 @@ function renderMathInElement() {
   let node;
   while ((node = walker.nextNode())) {
     const text = node.textContent || '';
-    
+
     // Skip if already processed or in code blocks
     const parent = node.parentElement;
     if (!parent || parent.tagName === 'CODE' || parent.tagName === 'PRE') {
@@ -146,4 +146,3 @@ function renderMathInElement() {
     parent.replaceChild(span, node);
   });
 }
-

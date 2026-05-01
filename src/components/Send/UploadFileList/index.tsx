@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Waveform } from "@uiball/loaders";
+import Spinner from "@/components/Spinner";
 
 import { ChatContext } from "@/types/common";
 import useUploadFile from "@/hooks/useUploadFile";
@@ -55,7 +55,7 @@ export default function UploadFileList({ context, id }: { context: ChatContext; 
               <div className="flex-center w-20 h-20 md:w-40 md:h-40">
                 {shouldPreviewImage(type) ? (
                   converting ? (
-                    <Waveform size={18} lineWeight={3} speed={1} color="#aaa" />
+                    <Spinner type="waveform" size={18} lineWeight={3} speed={1} color="#aaa" />
                   ) : (
                     <img className="w-full h-full object-cover" src={url} alt="image" />
                   )

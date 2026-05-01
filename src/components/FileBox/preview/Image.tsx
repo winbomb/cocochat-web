@@ -1,6 +1,6 @@
 import { FC, useEffect, useState } from "react";
 import { FetchBaseQueryError } from "@reduxjs/toolkit/dist/query";
-import { LineWobble } from "@uiball/loaders";
+import Spinner from "@/components/Spinner";
 import clsx from "clsx";
 
 import { useLazyPreCheckFileFromUrlQuery } from "@/app/services/message";
@@ -58,7 +58,7 @@ const ImageBox: FC<Props> = ({ url, alt }) => {
         <img className="w-full h-full object-cover" src={url} alt={alt} />
       ) : status == "loading" ? (
         <span>
-          <LineWobble color="rgb(21,91,117)" />
+          <Spinner type="lineWobble" color="rgb(21,91,117)" />
         </span>
       ) : status == 404 ? (
         <span className="text-lg text-orange-500">File not found, removed maybe</span>

@@ -9,7 +9,7 @@ import {
 } from "react";
 import { shallowEqual, useDispatch } from "react-redux";
 import { Virtuoso, VirtuosoHandle } from "react-virtuoso";
-import { useDebounce } from "rooks";
+import { useDebounce } from "@/hooks/useLightweightHooks";
 
 import { useLazyLoadMoreMessagesQuery, useReadMessageMutation } from "@/app/services/message";
 import { updateHistoryMark } from "@/app/slices/footprint";

@@ -170,8 +170,7 @@ module.exports = function (webpackEnv) {
               ecma: 8
             },
             compress: {
-              drop_console: false,
-              pure_funcs: ["console.log"],
+              drop_console: isEnvProduction,
               ecma: 5,
               warnings: false,
               // Disabled because of an issue with Uglify breaking seemingly valid code:
@@ -211,7 +210,28 @@ module.exports = function (webpackEnv) {
             ]
           }
         })
-      ]
+      ],
+      splitChunks: isEnvProduction && {
+        chunks: "all",
+        maxInitialRequests: 20,
+        maxAsyncRequests: 20,
+        minSize: 20000,
+        cacheGroups: {
+          vendors: {
+            test: /[\\/]node_modules[\\/]/,
+            name: "vendors",
+            chunks: "initial",
+            priority: -10
+          },
+          common: {
+            name: "common",
+            minChunks: 2,
+            chunks: "initial",
+            priority: -20,
+            reuseExistingChunk: true
+          }
+        }
+      }
     },
     resolve: {
       // This allows you to set a fallback for where webpack should look for modules.

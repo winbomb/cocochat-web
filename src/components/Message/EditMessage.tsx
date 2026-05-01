@@ -1,6 +1,6 @@
 import { ChangeEvent, FC, KeyboardEvent, useEffect, useRef, useState } from "react";
 import TextareaAutosize from "react-textarea-autosize";
-import { useKey } from "rooks";
+import { useKey } from "@/hooks/useLightweightHooks";
 
 import { ContentTypes } from "@/app/config";
 import { useEditMessageMutation } from "@/app/services/message";

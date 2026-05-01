@@ -1,7 +1,7 @@
 import { ClipboardEvent, MutableRefObject, useEffect, useRef } from "react";
 import { Plate, PlateEditor } from "@udecode/plate-common";
 import { ELEMENT_PARAGRAPH } from "@udecode/plate-paragraph";
-import { useLocalstorageState } from "rooks";
+import { useLocalstorageState } from "@/hooks/useLightweightHooks";
 
 import { plugins } from "./plugins";
 import { getMessageFromPlateValues, ParagraphInput } from "@/utils";

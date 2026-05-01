@@ -1,6 +1,6 @@
 import React from "react";
 import { PlateContent, useEditorRef } from "@udecode/plate-common";
-import { useKey } from "rooks";
+import { useKey } from "@/hooks/useLightweightHooks";
 
 import { cn, isMobile } from "@/utils";
 

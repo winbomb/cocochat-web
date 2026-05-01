@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { escapeRegExp } from "lodash";
+import { escapeRegExp } from "@/utils";
 
 import { StoredUser } from "@/app/slices/users";
 import { useAppSelector } from "@/app/store";

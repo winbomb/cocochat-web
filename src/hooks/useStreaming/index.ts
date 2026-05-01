@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useRef } from "react";
 import toast from "react-hot-toast";
 import dayjs from "dayjs";
-import { isNull, omitBy } from "lodash";
+import { omitByNull } from "@/utils";
 
 import BASE_URL from "@/app/config";
 import { useRenewMutation } from "@/app/services/auth";
@@ -229,7 +229,7 @@ export default function useStreaming() {
             description: organization_description,
             ...tmp,
           };
-          const purified = omitBy(transformed, isNull);
+          const purified = omitByNull(transformed);
           dispatch(updateInfo(purified));
           break;
         }
@@ -256,7 +256,7 @@ export default function useStreaming() {
           logs.forEach((log) => {
             const { uid, action, ...rest } = log;
             if (uid === loginUidRef.current && action === "update") {
-              const purified = omitBy(rest, isNull);
+              const purified = omitByNull(rest);
               dispatch(updateLoginUser(purified));
               if (
                 !guestRef.current &&

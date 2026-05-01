@@ -1,5 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { isNull, omitBy } from "lodash";
+
+import { omitByNull } from "@/utils";
 
 import { UserLog, UserState } from "@/types/sse";
 import { Contact, ContactStatus } from "@/types/user";
@@ -49,7 +50,7 @@ const usersSlice = createSlice({
       changeLogs.forEach(({ action, uid, ...rest }) => {
         switch (action) {
           case "update": {
-            const vals = omitBy(rest, isNull);
+            const vals = omitByNull(rest);
             if (state.byId[uid]) {
               Object.keys(vals).forEach((k) => {
                 // @ts-ignore
