@@ -1,5 +1,12 @@
 
 
+## 8. 更换图标
+
+@public\cocochat_icon.png, 帮我用这个文件，去替换android-chrome-192x192.png、android-chrome-512x512.png、apple-touch
+  -icon.png、favicon-16x16.png、favicon-32x32.png，并缩放到目标文件的尺寸。
+
+
+
 ## 7. 增加机器人是否在线的展示
 
 在线显示绿色图标，离线显示灰色图标。
