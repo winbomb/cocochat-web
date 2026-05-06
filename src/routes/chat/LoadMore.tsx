@@ -1,11 +1,11 @@
 import { FC } from "react";
-import { Waveform } from "@uiball/loaders";
+import Spinner from "@/components/Spinner";
 
 type Props = {};
 const LoadMore: FC<Props> = () => {
   return (
     <div data-load-more className="mt-2 flex-center w-full py-2">
-      <Waveform size={18} lineWeight={4} speed={1} color="#ccc" />
+      <Spinner type="waveform" size={18} lineWeight={4} speed={1} color="#ccc" />
     </div>
   );
 };

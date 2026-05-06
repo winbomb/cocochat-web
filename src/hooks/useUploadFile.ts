@@ -1,6 +1,5 @@
 import { useRef, useState } from "react";
 import toast from "react-hot-toast";
-import heic2any from "heic2any";
 
 import BASE_URL, { FILE_SLICE_SIZE } from "@/app/config";
 import { usePrepareUploadFileMutation, useUploadFileMutation } from "@/app/services/message";
@@ -23,6 +22,7 @@ interface IProps {
   id: number;
 }
 const convertHeic2Jpg = async (file: { name: string; type: string; size: number; url: string }) => {
+  const heic2any = await import("heic2any").then((m) => m.default);
   const res = await fetch(file.url);
   const blob = await res.blob();
   const jpgBlob = (await heic2any({

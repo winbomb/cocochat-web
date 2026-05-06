@@ -1,10 +1,8 @@
-import { FC } from "react";
+import { FC, useState, useEffect } from "react";
 import { Lightbox } from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
-import Fullscreen from "yet-another-react-lightbox/plugins/fullscreen";
-import Download from "yet-another-react-lightbox/plugins/download";
-import Captions from "yet-another-react-lightbox/plugins/captions";
 import Zoom from "yet-another-react-lightbox/plugins/zoom";
+import Captions from "yet-another-react-lightbox/plugins/captions";
 import "yet-another-react-lightbox/plugins/captions.css";
 export interface PreviewImageData {
   originUrl: string;
@@ -22,11 +20,12 @@ interface Props {
 
 const ImagePreviewModal: FC<Props> = ({ download = true, data, closeModal }) => {
   if (!data) return null;
-  const { originUrl, downloadLink, name, type } = data;
+  const { originUrl, downloadLink, name } = data;
   return (
     <Lightbox
       open
       close={closeModal}
+      carousel={{ finite: true }}
       styles={{
         navigationNext: {
           display: "none",
@@ -41,10 +40,9 @@ const ImagePreviewModal: FC<Props> = ({ download = true, data, closeModal }) => 
           alt: name,
           title: name,
           description: name,
-          download: downloadLink || originUrl,
         },
       ]}
-      plugins={download ? [Captions, Fullscreen, Zoom, Download] : [Captions, Fullscreen, Zoom]}
+      plugins={[Captions, Zoom]}
       captions={{ descriptionTextAlign: "center" }}
     />
   );

@@ -1,5 +1,5 @@
 import { FC, memo, useEffect, useState } from "react";
-import { Ring } from "@uiball/loaders";
+import Spinner from "@/components/Spinner";
 import clsx from "clsx";
 
 import useLogout from "@/hooks/useLogout";
@@ -59,7 +59,7 @@ const Loading: FC<Props> = ({
         fullscreen ? "w-screen h-screen" : ""
       )}
     >
-      <Ring size={40} lineWeight={5} speed={2} color="black" />
+      <Spinner type="ring" size={40} lineWeight={5} speed={2} color="black" />
       <Button
         className={clsx(`danger`, reloadVisible ? "visible" : "invisible")}
         onClick={handleReload}

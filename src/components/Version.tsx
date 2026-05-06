@@ -1,6 +1,6 @@
 import { FC, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { Ring } from "@uiball/loaders";
+import Spinner from "@/components/Spinner";
 import dayjs from "dayjs";
 
 import { useAppSelector } from "@/app/store";

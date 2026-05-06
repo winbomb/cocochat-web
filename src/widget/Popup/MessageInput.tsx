@@ -7,7 +7,7 @@ import IconImage from "@/assets/icons/image.svg";
 import useSendMessage from "../../hooks/useSendMessage";
 import { useWidget } from "../WidgetContext";
 import useUploadFile from "@/hooks/useUploadFile";
-import { Wobble } from "@uiball/loaders";
+import Spinner from "@/components/Spinner";
 import { getImageSize } from "@/utils";
 
 type Props = {
@@ -112,7 +112,7 @@ const MessageInput = (props: Props) => {
             className="p-1 disabled:opacity-60"
           >
             {isUploading ? (
-              <Wobble size={16} />
+              <Spinner type="ring" size={16} />
             ) : (
               <IconImage className="dark:stroke-gray-100 w-4 h-4" />
             )}

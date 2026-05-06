@@ -1,9 +1,9 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { omitBy } from "lodash";
+
+import { omitByNil } from "@/utils";
 
 import { Channel, UpdateChannelDTO, UpdatePinnedMessageDTO } from "@/types/channel";
 import BASE_URL from "../config";
-import { isUndefinedOrNull } from "@udecode/plate-common";
 
 // import { updateVoicingInfo } from "./voice";
 
@@ -76,7 +76,7 @@ const channelsSlice = createSlice({
         }
         default:
           {
-            const wtf = omitBy(rest, isUndefinedOrNull);
+            const wtf = omitByNil(rest);
             console.log("rrrr", wtf);
 
             // old code: state.byId[gid] = { ...state.byId[gid]!, ...getNonNullValues(rest) };

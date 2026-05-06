@@ -536,3 +536,25 @@ export const sortUsersByRole = (users: StoredUser[]) => {
     return Number(b_isAdmin) - Number(a_isAdmin) || Number(b.is_bot) - Number(a.is_bot);
   });
 };
+
+// Lightweight lodash replacements
+export const omitByNull = (obj: Record<string, any>) =>
+  Object.fromEntries(Object.entries(obj).filter(([_, v]) => v !== null));
+
+export const omitByNil = (obj: Record<string, any>) =>
+  Object.fromEntries(Object.entries(obj).filter(([_, v]) => v !== null && v !== undefined));
+
+export const shallowEqualObjects = (a: Record<string, any> | undefined, b: Record<string, any> | undefined) => {
+  if (a === b) return true;
+  if (!a || !b) return false;
+  const keysA = Object.keys(a);
+  const keysB = Object.keys(b);
+  if (keysA.length !== keysB.length) return false;
+  for (const key of keysA) {
+    if (a[key] !== b[key]) return false;
+  }
+  return true;
+};
+
+export const escapeRegExp = (str: string) =>
+  str.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");

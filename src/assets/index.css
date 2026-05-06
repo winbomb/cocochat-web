@@ -366,3 +366,26 @@ input[type="number"]::-webkit-outer-spin-button {
   left: 8px;
   top: -34px;
 }
+
+/* Spinner animations */
+@keyframes waveform-bar {
+  0%, 100% { transform: scaleY(0.3); }
+  50% { transform: scaleY(1); }
+}
+.animate-waveform-bar {
+  animation: waveform-bar ease-in-out infinite;
+}
+@keyframes orbit-inner {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(-360deg); }
+}
+.animate-orbit-inner {
+  animation: orbit-inner linear infinite;
+}
+@keyframes line-wobble {
+  0%, 100% { transform: scaleY(0.3); }
+  50% { transform: scaleY(1); }
+}
+.animate-line-wobble {
+  animation: line-wobble ease-in-out infinite;
+}

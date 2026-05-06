@@ -1,7 +1,7 @@
 import { ChangeEvent, FC, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import { NavLink } from "react-router-dom";
-import { useOutsideClick } from "rooks";
+import { useOutsideClick } from "@/hooks/useLightweightHooks";
 
 import useFilteredUsers from "@/hooks/useFilteredUsers";
 import Modal from "./Modal";

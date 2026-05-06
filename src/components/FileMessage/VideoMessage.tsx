@@ -1,5 +1,5 @@
 import { SyntheticEvent, useState } from "react";
-import { Orbit } from "@uiball/loaders";
+import Spinner from "@/components/Spinner";
 import clsx from "clsx";
 
 import IconVideo from "@/assets/icons/file.video.svg";
@@ -70,7 +70,7 @@ const VideoMessage = ({ url, name, size, download }: Props) => {
       </div>
       {!canPlay && !error ? (
         <div className={tipClass}>
-          <Orbit color="#fff" />
+          <Spinner type="orbit" color="#fff" />
         </div>
       ) : null}
       <video

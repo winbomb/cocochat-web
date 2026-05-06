@@ -1,7 +1,7 @@
 import { ChangeEvent, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import TextareaAutoSize from "react-textarea-autosize";
-import { useKey } from "rooks";
+import { useKey } from "@/hooks/useLightweightHooks";
 
 import { isMobile } from "../../utils";
 import Button from "../styled/Button";

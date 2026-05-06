@@ -3,10 +3,27 @@ import { Editor } from "@toast-ui/react-editor";
 import { useTranslation } from "react-i18next";
 
 import "prismjs/themes/prism.css";
+// @ts-ignore - prismjs has no type declarations
+import Prism from "prismjs";
+import "prismjs/components/prism-javascript";
+import "prismjs/components/prism-typescript";
+import "prismjs/components/prism-python";
+import "prismjs/components/prism-css";
+import "prismjs/components/prism-json";
+import "prismjs/components/prism-bash";
+import "prismjs/components/prism-java";
+import "prismjs/components/prism-c";
+import "prismjs/components/prism-cpp";
+import "prismjs/components/prism-markup";
+import "prismjs/components/prism-sql";
+import "prismjs/components/prism-go";
+import "prismjs/components/prism-rust";
+import "prismjs/components/prism-yaml";
+import "prismjs/components/prism-markdown";
 import "@toast-ui/editor/dist/toastui-editor.css";
 import "@toast-ui/editor/dist/theme/toastui-editor-dark.css";
 import "@toast-ui/editor-plugin-code-syntax-highlight/dist/toastui-editor-plugin-code-syntax-highlight.css";
-import codeSyntaxHighlight from "@toast-ui/editor-plugin-code-syntax-highlight/dist/toastui-editor-plugin-code-syntax-highlight-all.js";
+import codeSyntaxHighlight from "@toast-ui/editor-plugin-code-syntax-highlight";
 
 import useUploadFile from "@/hooks/useUploadFile";
 import { isDarkMode } from "@/utils";
@@ -69,7 +86,7 @@ const MarkdownEditor: FC<Props> = ({
     <div className="input md-editor">
       <Editor
         initialValue={initialValue}
-        plugins={[codeSyntaxHighlight]}
+        plugins={[ [codeSyntaxHighlight, { highlighter: Prism }] ]}
         placeholder={placeholder}
         ref={editorRef}
         toolbarItems={[]}

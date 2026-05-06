@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { toast } from "react-hot-toast";
-import { Orbit } from "@uiball/loaders";
+import Spinner from "@/components/Spinner";
 import clsx from "clsx";
 
 import IconCancel from "@/assets/icons/close.circle.svg";
@@ -90,7 +90,7 @@ const WebhookEdit = ({ uid }: Props) => {
           </form>
           <button type="button" disabled={isUpdating} onClick={handleEdit}>
             {isUpdating ? (
-              <Orbit size={16} />
+              <Spinner type="orbit" size={16} />
             ) : editable ? (
               <IconSave className="stroke-gray-500 !w-5 !h-5" />
             ) : (

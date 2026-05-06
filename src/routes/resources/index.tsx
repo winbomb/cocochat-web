@@ -1,7 +1,6 @@
 // @ts-nocheck
 import { useEffect, useRef, useState } from "react";
 import clsx from "clsx";
-import Masonry from "masonry-layout";
 
 import { useAppSelector } from "@/app/store";
 import FileBox from "@/components/FileBox";
@@ -32,10 +31,8 @@ const checkFilter = (data, filter, channelMessage) => {
   return selected;
 };
 
-let msnry: Masonry | null;
 function ResourceManagement() {
   const { isExpired } = useExpiredResMap();
-  const listContainerRef = useRef<HTMLDivElement>();
   const [filter, setFilter] = useState({});
   const view = useAppSelector((store) => store.ui.fileListView.view, shallowEqual);
   const message = useAppSelector((store) => store.message, shallowEqual);
@@ -55,26 +52,7 @@ function ResourceManagement() {
   };
 
   useEffect(() => {
-    if (view == "grid" && listContainerRef) {
-      const container = listContainerRef.current;
-      if (!container) return;
-      const cWidth = container.getBoundingClientRect().width - 16 * 2;
-      const count = Math.floor(cWidth / 368);
-      const leftWidth = cWidth % 368;
-      const gutter = Math.max(Math.floor(leftWidth / (count - 1)), 8);
-      // console.log("gutter", gutter, cWidth, count, leftWidth);
-      msnry = new Masonry(container, {
-        // options
-        fitWidth: true,
-        gutter,
-        itemSelector: ".grid-box"
-        // columnWidth: 200
-      });
-    } else {
-      if (msnry) {
-        msnry.destroy();
-      }
-    }
+    // No masonry JS needed - CSS columns handle the grid layout
   }, [view, filter]);
   // const fileMessages = fileMsgs.filter((id) => {
   //   const data = message[id];
@@ -95,11 +73,10 @@ function ResourceManagement() {
       </div>
       <div
         className={clsx(
-          `w-full h-full px-4 overflow-scroll flex`,
-          view == "item" && "gap-2 flex-col",
-          view == "grid" && "flex-wrap"
+          `w-full h-full px-4 overflow-scroll`,
+          view == "item" && "flex gap-2 flex-col",
+          view == "grid" && "col-count-2 md:col-count-3 lg:col-count-4"
         )}
-        ref={listContainerRef}
       >
         {fileMsgs.map((id) => {
           const data = message[id];

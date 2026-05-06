@@ -1,4 +1,4 @@
-import { useLocalstorageState } from "rooks";
+import { useLocalstorageState } from "@/hooks/useLightweightHooks";
 
 const LOCAL_KEY = `EXPIRED_FILES_MAP`;
 const useExpiredResMap = () => {

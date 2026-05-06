@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";
 import { NavLink, useLocation } from "react-router-dom";
-import { Waveform } from "@uiball/loaders";
+import Spinner from "@/components/Spinner";
 import clsx from "clsx";
 
 import { useAppSelector } from "@/app/store";
@@ -55,7 +55,7 @@ const CustomHeader = ({ context }: Props) => {
     <>
       {isChannel ? <ChannelHeader cid={id} /> : null}
       <div className={clsx("mt-2 w-full py-2 ", loadingMore ? "flex-center" : "hidden")}>
-        <Waveform size={18} lineWeight={4} speed={1} color="#ccc" />
+        <Spinner type="waveform" size={18} lineWeight={4} speed={1} color="#ccc" />
       </div>
     </>
   );
