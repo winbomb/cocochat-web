@@ -8,8 +8,9 @@ import "./assets/index.css";
 import "./libs/DayjsSetting";
 import "./libs/TippySetting";
 
-import MobileAppTip from "./components/MobileAppTip";
-import NewVersion from "./components/NewVersion";
+// Disabled: MobileAppTip and NewVersion
+// import MobileAppTip from "./components/MobileAppTip";
+// import NewVersion from "./components/NewVersion";
 import ReduxRoutes from "./routes";
 import { register } from "./serviceWorkerRegistration";
 // import i18n (needs to be bundled ;))
@@ -35,23 +36,24 @@ root.render(
     <DndProvider backend={HTML5Backend}>
       <ReduxRoutes />
     </DndProvider>
-    <MobileAppTip />
+    {/* Disabled: <MobileAppTip /> */}
   </Suspense>
 );
 
-register({
-  // onSuccess: () => {
-  //   toast.success("Service Worker Installed");
-  // },
-  onUpdate: (reg) => {
-    const handleUpdate = () => {
-      reg.unregister().then(() => {
-        reloadCurrentPage();
-      });
-    };
-    toast((t) => <NewVersion id={t.id} handleUpdate={handleUpdate} />, {
-      duration: Infinity,
-      position: "top-right"
-    });
-  }
-});
+// Disabled auto update and app download prompts
+// register({
+//   // onSuccess: () => {
+//   //   toast.success("Service Worker Installed");
+//   // },
+//   onUpdate: (reg) => {
+//     const handleUpdate = () => {
+//       reg.unregister().then(() => {
+//         reloadCurrentPage();
+//       });
+//     };
+//     toast((t) => <NewVersion id={t.id} handleUpdate={handleUpdate} />, {
+//       duration: Infinity,
+//       position: "top-right"
+//     });
+//   }
+// });
